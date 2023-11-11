@@ -1,0 +1,67 @@
+
+
+<div class="container  m-5">
+    <h2>Sign Up</h2>
+
+    
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+        </div>
+        <input type="text" [(ngModel)]="newUser.username"  [readOnly]="!show" class="form-control" aria-label="Username" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+
+      <div class="input-group mb-3" *ngIf="show" >
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        </div>
+        <input type="password" [(ngModel)]="this.newUser.password"  class="form-control" aria-label="Password" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+
+      <div class="input-group mb-3" *ngIf="show">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Confirm Password</span>
+        </div>
+        <input type="password" [(ngModel)]="Cpassword" class="form-control" aria-label="Confirm Password" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+    
+    
+    
+    <button (click)="next()" *ngIf="show" class="btn btn-primary" >Next</button>
+
+
+<!-- the rest -->
+<ng-container *ngIf="!show">
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Nom et Prenom*</span>
+    </div>
+    <input type="text" [(ngModel)]="newUser.nom" class="form-control">
+    <input type="text" [(ngModel)]="newUser.prenom" class="form-control">
+  </div>
+
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Email*</span>
+    </div>
+    <input type="text" [(ngModel)]="newUser.mail" class="form-control" aria-label="Email" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Tel</span>
+    </div>
+    <input type="text" [(ngModel)]="newUser.tel" class="form-control" aria-label="Tel" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <button (click)="onSubmit()" class="btn btn-primary" > next </button>
+
+</ng-container>
+
+</div>
